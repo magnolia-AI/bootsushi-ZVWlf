@@ -1,3 +1,4 @@
+import Link from next/link;
 import './globals.css'
 import type { Metadata } from 'next'
 import { Toaster } from "@/components/ui/toaster"
@@ -19,6 +20,25 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
       <body className="h-full flex flex-col antialiased">
+        <nav className="bg-gray-800 p-4">
+          <div className="container mx-auto flex justify-between items-center">
+            <Link href="/" className="text-white text-2xl font-bold">
+              Cool Hats
+            </Link>
+            <div className="space-x-4">
+              <Link href="/" className="text-gray-300 hover:text-white">
+                Home
+              </Link>
+              <Link href="/hats" className="text-gray-300 hover:text-white">
+                Hats
+              </Link>
+              <Link href="/cart" className="text-gray-300 hover:text-white">
+                Cart
+              </Link>
+            </div>
+          </div>
+        </nav>
+        
         <ThemeProvider defaultTheme="light" attribute="class">
           <main className="flex-1">
             {children}
