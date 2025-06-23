@@ -3,14 +3,10 @@
 import Image from "next/image";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
+import { Hat } from "@/lib/hats"; // Import the Hat type
 
 interface HatCardProps {
-  hat: {
-    id: string;
-    name: string;
-    price: number;
-    image: string;
-  };
+  hat: Hat; // Use the imported Hat type
 }
 
 export function HatCard({ hat }: HatCardProps) {
@@ -19,7 +15,7 @@ export function HatCard({ hat }: HatCardProps) {
       <CardHeader className="p-0">
         <div className="relative w-full h-48">
           <Image
-            src={hat.image}
+            src={hat.imageUrl} // Use hat.imageUrl
             alt={hat.name}
             layout="fill"
             objectFit="cover"
@@ -29,6 +25,9 @@ export function HatCard({ hat }: HatCardProps) {
       </CardHeader>
       <CardContent className="flex-grow p-4">
         <CardTitle className="text-xl font-semibold mb-2">{hat.name}</CardTitle>
+        <p className="text-gray-600 dark:text-gray-400 text-sm mb-2 line-clamp-2">
+          {hat.description} {/* Display the description */}
+        </p>
         <p className="text-gray-700 dark:text-gray-300 text-lg font-bold">
           ${hat.price.toFixed(2)}
         </p>
