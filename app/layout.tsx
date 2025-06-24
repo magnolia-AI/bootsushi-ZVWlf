@@ -29,7 +29,7 @@ export default function RootLayout({
               <Link href="/" className="text-gray-300 hover:text-white">
                 Home
               </Link>
-              <Link href="/hats" className="text-gray-300 hover:text-white">
+              <Link href="/products" className="text-gray-300 hover:text-white">
                 Hats
               </Link>
               <Link href="/cart" className="text-gray-300 hover:text-white">
@@ -49,4 +49,5 @@ export default function RootLayout({
     </html>
   )
 }
+
 
