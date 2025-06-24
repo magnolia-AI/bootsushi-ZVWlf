@@ -1,4 +1,4 @@
-import Link from next/link;
+import Link from 'next/link';
 import './globals.css'
 import type { Metadata } from 'next'
 import { Toaster } from "@/components/ui/toaster"
@@ -49,3 +49,4 @@ export default function RootLayout({
     </html>
   )
 }
+
